@@ -1,6 +1,10 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.BindingData.UserForm;
 import com.example.demo.Entity.User;
+import com.example.demo.Entity.userRoles;
 import com.example.demo.Services.UserService;
 import com.example.demo.helper.Message;
 import com.example.demo.helper.MessageType;
@@ -29,6 +34,8 @@ public class ControllerClass {
 
     @Autowired
     UserService service;
+
+    BCryptPasswordEncoder encode=new BCryptPasswordEncoder(12);
 
     // 
     @RequestMapping("/home")
@@ -82,9 +89,15 @@ public class ControllerClass {
         usr.setName(usrf.getName());
         usr.setEmail(usrf.getEmail());
         usr.setAbout(usrf.getAbout());
-        usr.setPassword(usrf.getPassword());
+        usr.setPassword(encode.encode(usrf.getPassword()));
         usr.setPhone(usrf.getPhone());
         usr.setProfilPic("https://d22e6o9mp4t2lx.cloudfront.net/cms/pfp1_fe1e0a17e8.jpg");
+
+        userRoles rsl=new userRoles();
+        rsl.setRole("ADMIN");
+        rsl.setUsr(usr);
+        List<userRoles> tmp=List.of(rsl);
+        usr.setRoles(tmp);
         service.saveUser(usr);
 
         Message message=Message.builder().content("Registration Successfull").type(MessageType.green).build();   // If You Want TO Send Message We Basically use this this is a User Manually Cretaed Message Format here Message is a Class

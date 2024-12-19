@@ -56,7 +56,8 @@ public class User {
     private List<Contact> contact=new ArrayList<Contact>(); // When we Assign The Value to it then it will consider as a Default Values
 
 
-    
+    @OneToMany(mappedBy = "usr",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<userRoles> roles;
 
 
 
@@ -206,6 +207,16 @@ public class User {
 
     public void setContact(List<Contact> contact) {
         this.contact = contact;
+    }
+
+
+    public List<userRoles> getRoles() {
+        return roles;
+    }
+
+
+    public void setRoles(List<userRoles> roles) {
+        this.roles = roles;
     }
 
     
