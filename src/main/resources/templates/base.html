@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html id="theamChange" class="Light" lang="en" th:fragment="parent(title,div)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@{/css/output.css}">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/38573ab304.js" crossorigin="anonymous"></script>
+     <title th:replace="${title}">Document</title>  <!-- Here We also Use the include for the replacement for  replace -->
+
+
+
+
+    </head>
+<body class="dark:bg-gray-900 dark:text-white">
+      
+    <!-- Comman Header Here  -->
+
+    <div class="p-4">
+
+        <section th:replace="~{navbar::navbar1}"></section>
+
+    </div>
+
+    <!-- Comman Body Here  -->
+
+    <div class="mt-10">
+          <p th:replace="${div}">Skdkk</p>
+    </div>
+
+
+    <!-- Comman Footer Here -->
+
+
+      <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+      <script th:src="@{/JS/script.js}"></script>
+</body>
+</html>
