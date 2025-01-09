@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html id="theamChange" class="Light" lang="en" th:fragment="parent(title,content,script)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@{/css/output.css}">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/38573ab304.js" crossorigin="anonymous"></script>
+     <title th:replace="${title}">Document</title>  <!-- Here We also Use the include for the replacement for  replace -->
+
+     <link rel="stylesheet" th:href="@{/css/style.css}">
+     <link rel="stylesheet" th:href="@{/css/contact.css}">
+
+    
+    </head>
+<body class="dark:bg-gray-900 dark:text-white">
+      
+    <!-- Comman Header Here  -->
+
+    <!-- If User is Loged-In -->
+    
+    <div th:if="${uInfo}">
+          <p th:replace="~{user/user_navbar::user-navbar}"></p>
+    </div>
+
+    
+
+
+    <!-- If User is not Loged-In -->
+
+    <div th:unless="${uInfo}">
+        <p th:replace="~{navbar::navbar1}"></p>
+    </div>
+    
+    <!--Not LogIn Comman Body Here  -->
+    <!-- <div th:unless="${uInfo}"> -->
+          <section th:replace="${content}">Skdkk odoida da fdkjksjdf dkfjksdnfjsd fksdjfksd f</section>
+    <!-- </div> -->
+
+
+    <!-- <div th:if="${uInfo}">
+        <section th:replace="${content}">Skdkk odoida da fdkjksjdf dkfjksdnfjsd fksdjfksd f</section>
+    </div> -->
+
+
+    
+
+    <!-- Comman Footer Here -->
+
+
+      <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <th:block th:replace="${script}"></th:block>
+      <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

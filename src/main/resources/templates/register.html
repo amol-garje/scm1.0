@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::parent(~{::title},~{::#content1},~{::script})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title> <!-- This Will Be Come Daynamically -->
+
+
+
+</head>
+
+<body>
+    <div id="content1" class="pl-64 pt-20">
+        <div class="flex flex-col items-center justify-center pt-10   md:p-0 lg:p-0">
+            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                
+                <div th:replace="message::messagef"></div>  <!-- Here We Retrive the Session Atribute-->
+                
+                <form class="max-w-sm mx-auto" th:action="@{/from_data}" method="post" th:object="${userdata}" novalidate>
+                    <!--Name Here-->
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name
+                            :</label>
+                        <input type="text" style="width: 320px;" placeholder="enter here ..." id="name" th:field="*{name}"
+                            class="block p-2 mt-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                       
+                        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-red-600">Name is required</p>
+                   </div>
+                    <!--Email Here -->
+
+                    <div>
+                        <label for="email" class="block mb-2 mt-3 text-sm font-medium text-gray-900 dark:text-white">Email
+                            :</label>
+                        <input type="email" style="width: 320px;" placeholder="example@gmail.com" id="email"  th:field="*{email}"
+                            class="block p-2 mt-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                   
+                            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-red-600">Name is required</p>
+                        </div>
+                    <!--Password Here -->
+                    <div>
+                        <label for="password" class="block mt-3 mb-2 text-sm font-medium text-gray-900 dark:text-white">New
+                            Password</label>
+                        <input type="password" style="width: 320px;" id="password" th:field="*{password}"
+                          placeholder="12345"  class="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    
+                          <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-red-600">Name is required</p>
+                        </div>
+                    <!--Phone Field-->
+                    <div>
+                        <label for="phone" class="block mb-2 mt-3 text-sm font-medium text-gray-900 dark:text-white">
+                        Phone : </label>
+                        <input type="text" style="width: 320px;" id="phone" th:field="*{phone}"
+                        placeholder="Your Number"  class="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                   
+                        <p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="text-red-600">Name is required</p>
+                    </div>
+                    <!--Aout Here -->
+                    <div>
+
+                        <label for="about" class="block mb-2 mt-3 text-sm font-medium text-gray-900 dark:text-white">Your
+                            message :</label>
+                        <textarea id="about" rows="4" th:field="*{about}"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Write your thoughts here..."></textarea>
+                    
+                            <p th:if="${#fields.hasErrors('about')}" th:errors="*{about}" class="text-red-600">Name is required</p>
+                        </div>
+
+                    <!--Button Here -->
+                    <div class="mt-2 flex justify-center">
+                        <input type="submit" class="text-white bg-gradient-to-r mt-2 from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"></input>
+                        <button type="reset" class="text-white bg-gradient-to-r mt-2 from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Reset</button>
+                    </div>
+                    
+                </form>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script></script>
+
+</body>
+
+</html>

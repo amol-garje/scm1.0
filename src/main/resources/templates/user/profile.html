@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::parent(~{::title},~{::#content1},~{::script})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${uInfo.name}">Profile</title>   <!-- This Will Be Come Daynamically -->
+</head>
+<body>
+
+   
+   <div id="content1" class="pt-20 pl-64">
+
+    <div th:if="${uInfo}">
+        <p th:replace="~{user/sidebar::sidebar}">Skdkk</p>   
+    </div>      
+
+            <div  style="width: fit-content;margin-left:260px;height: 3000px;width:81%;border: 1px solid red;">
+                
+                <div >
+                    <p >Welcome in Profile</p>
+                </div>            
+            </div> 
+   </div>
+
+<script></script>
+
+
+
+</body>
+</html>
