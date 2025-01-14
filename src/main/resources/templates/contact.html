@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{base::parent(~{::title},~{::#content1},~{::script})}">
+<html lang="en" th:replace="~{base::parent(~{::title},~{::#content1},~{::script},~{::link})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" th:href="@{/css/contact.css}">
 </head>
 <body>
     <div id="content1" class="pt-20 pl-64" >

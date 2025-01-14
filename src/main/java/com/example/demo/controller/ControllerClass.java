@@ -51,6 +51,11 @@ public class ControllerClass {
          return "home";
     }
 
+    @RequestMapping("/service")
+    public String servicePage(Model m){
+         return "service";
+    }
+
     @RequestMapping(value ="/about", method=RequestMethod.GET)
     public String aboutPage() {
         return "about";

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="theamChange" class="Light" lang="en" th:fragment="parent(title,content,script)">
+<html id="theamChange" class="Light" lang="en" th:fragment="parent(title,content,script,style)">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,9 @@
      <title th:replace="${title}">Document</title>  <!-- Here We also Use the include for the replacement for  replace -->
 
      <link rel="stylesheet" th:href="@{/css/style.css}">
-     <link rel="stylesheet" th:href="@{/css/contact.css}">
+   
 
+     <th:block th:replace="${style}"></th:block>
     
     </head>
 <body class="dark:bg-gray-900 dark:text-white">

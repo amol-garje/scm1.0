@@ -1,14 +1,93 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{base::parent(~{::title},~{::#content1},~{::script})}">
+<html lang="en" th:replace="~{base::parent(~{::title},~{::#content1},~{::script},~{::style})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <style>
+        body{
+  min-height: 100vh;
+  width: 100%;
+  background: #c8e8e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+    </style>
 </head>
 <body>
     <div id="content1" class="pt-20">
         
-            <div style="margin-top: 20;">This is About Page </div>
+            <div style="margin-top: 20;">
+                
+            
+                <div class="container mx-auto px-6 py-12">
+                    <!-- Header Section -->
+                    <div class="text-center" style="margin-bottom: 20px;">
+                        <h1 class="text-4xl font-extrabold text-blue-600">About Us</h1>
+                        <p class="mt-4 text-lg text-gray-600">Learn more about who we are, what we do, and why we’re here to help you.</p>
+                    </div>
+            
+                    <!-- Content Section -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Mission Section -->
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold text-gray-700 mb-4">Our Mission</h2>
+                            <p class="text-gray-600">
+                                Our mission is to empower you with tools that streamline contact management, enhance collaboration,
+                                and foster seamless communication. We aim to save your time and energy, so you can focus on what truly
+                                matters – nurturing your connections.
+                            </p>
+                        </div>
+            
+                        <!-- Vision Section -->
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold text-gray-700 mb-4">Our Vision</h2>
+                            <p class="text-gray-600">
+                                We envision a world where managing contacts is effortless, communication is seamless, and building
+                                relationships is a joy. By leveraging innovation, we aim to transform the way individuals and
+                                businesses connect.
+                            </p>
+                        </div>
+            
+                        <!-- Offer Section -->
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold text-gray-700 mb-4">What We Offer</h2>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Effortless Contact Organization</li>
+                                <li>Enhanced Productivity with advanced tools</li>
+                                <li>Seamless Integration with third-party apps</li>
+                                <li>Top-Notch Security for your data</li>
+                            </ul>
+                        </div>
+            
+                        <!-- Story Section -->
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold text-gray-700 mb-4">Our Story</h2>
+                            <p class="text-gray-600">
+                                SCM1.0 was founded with a simple idea – to help people and organizations create,
+                                maintain, and grow their networks with ease. We developed this platform to offer a smarter and more
+                                efficient solution.
+                            </p>
+                        </div>
+                    </div>
+            
+                    <!-- Call to Action -->
+                    <div class="text-center" style="margin-top: 10px;">
+                        <h2 class="text-2xl font-bold text-gray-700">Join Us</h2>
+                        <p class="mt-4 text-gray-600">
+                            Whether you’re an individual looking for an organized way to manage your personal contacts or a business
+                            striving for better client relationships, SCM1.0 is here for you.
+                        </p>
+                        <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 mt-6">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+
+            
+            </div>
    </div>
 
    <script></script>

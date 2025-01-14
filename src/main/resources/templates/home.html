@@ -1,20 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{base::parent(~{::title},~{::#content1},~{::script})}">
+<html lang="en" th:replace="~{base::parent(~{::title},~{::#content1},~{::script},~{::style})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>   <!-- This Will Be Come Daynamically -->
+    <style></style>
 </head>
 <body>
    
    
     <div id="content1" class="pt-20 pl-64">
         <div style="margin-top: 20;" >
-        
-              
-        
+   
+            
+          <!-- Hero Section (Welcome Page) -->
+    <section class="relative bg-gradient-to-r from-teal-600 to-indigo-600 text-white py-32 px-6">
+        <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://via.placeholder.com/1500x800');"></div>
+        <div class="relative container mx-auto text-center text-black">
+            <h1 class="text-5xl sm:text-6xl font-extrabold" style="color: red; margin-top: 30px;">Welcome <span th:text="${uInfo.name}">Name</span> to the Contact Management System</h1>
+            <p class="text-lg sm:text-xl mb-8" style="color: black; margin-top: 20px;">Your one-stop solution to organize, manage, and grow your network of contacts.</p>
+            <a   th:if="${uInfo}" th:href="@{/user/profile}"
+                class="inline-flex items-center justify-center bg-yellow-500 text-black text-xl px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out mb-8">
+                Get Started
+                <svg class="ml-4 w-5 h-5 transform transition-transform duration-300 hover:translate-x-2"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12" />
+                </svg>
+            </a>
         </div>
-   </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-20 px-6 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-10" style="margin-top: 40px;padding-top: 30px;">Key Features</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" style="padding-bottom: 50px;margin-bottom: 30px;">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:bg-teal-500 hover:text-white transition-all">
+                    <h3 class="text-2xl font-semibold mb-4">Easy Contact Management</h3>
+                    <p class="text-gray-700">Store and manage your contacts in one place with powerful search and filters.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:bg-teal-500 hover:text-white transition-all">
+                    <h3 class="text-2xl font-semibold mb-4">Secure and Reliable</h3>
+                    <p class="text-gray-700">Your contact data is stored safely with top-tier encryption and secure backups.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:bg-teal-500 hover:text-white transition-all">
+                    <h3 class="text-2xl font-semibold mb-4">Cloud Sync</h3>
+                    <p class="text-gray-700">Sync your contacts across devices so you can access them anytime, anywhere.</p>
+                </div>
+            </div >
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-10">About Our System</h2>
+            <p class="text-lg sm:text-xl text-gray-700 mb-8">Our Contact Management System provides users with a simple, intuitive way to manage their contacts, stay organized, and improve their productivity.</p>
+            <a href="/contact"
+                class="inline-flex items-center justify-center bg-indigo-600 text-white text-xl px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out mb-6">
+                Contact Us
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto text-center" style="margin-top: 20px; padding-top: 20px; padding-bottom: 20px;">
+            <p>&copy; 2025 Contact Management System. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a th:href="@{https://www.instagram.com/the_amol_garje?igsh=MTdldTFzeWxzeWN4NA==}" class="text-white hover:text-yellow-400">Instagram</a>
+                <a th:href="@{https://github.com/amol-garje}" class="text-white hover:text-yellow-400">GitHub</a>
+                <a th:href="@{https://www.linkedin.com/in/amol-garje-21b92a231/}" class="text-white hover:text-yellow-400">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        mobileMenuButton.addEventListener("click", () => {
+            const navLinks = document.querySelector(".lg\\:flex");
+            navLinks.classList.toggle("hidden");
+        });
+    </script>
+
+
    <script></script>
 </body>
 </html>
